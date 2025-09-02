@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react(),],
+
+    build:{
+      outDir: '../Live',
+      emptyOutDir: true
+    },
   
   base: '/',
 })
