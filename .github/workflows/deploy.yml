@@ -1,4 +1,4 @@
-# GitHub Action for building and deploying a React app to Hostinger FTP
+# GitHub Action for building and deploying a React app to Hostinger using FTP secrets on github
 
 name: Build and Deploy
 
