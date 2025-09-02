@@ -43,6 +43,6 @@ jobs:
           # The local directory to upload from (your build output)
           local-dir: ./dist/
           # The remote directory to upload to on the server (your website's root)
-          server-dir: ./public_html/
+          server-dir: ./
           # Option to automatically remove files on the server that are not in the 'dist' folder
           dangerous-clean-slate: true
