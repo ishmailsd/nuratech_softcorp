@@ -1,0 +1,30 @@
+# Force correct MIME types for JavaScript modules
+<FilesMatch "\.js$">
+    ForceType application/javascript
+</FilesMatch>
+
+# Force correct MIME types for CSS
+<FilesMatch "\.css$">
+    ForceType text/css
+</FilesMatch>
+
+# Alternative MIME type method
+AddType application/javascript .js
+AddType text/css .css
+
+# Handle SPA routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Additional MIME type overrides
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+</IfModule>
