@@ -75,7 +75,7 @@ const Services = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section: radar rings + floating snippets */}
-        <section className="relative h-[60vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
+        <section className="relative h-[80vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
           {/* Radar pulse rings (background layer) */}
           {[0, 800, 1600, 2400, 3200].map((delay) => (
             <RadarRing key={delay} delay={delay} />

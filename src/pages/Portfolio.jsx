@@ -43,7 +43,7 @@ const Portfolio = () => {
       <Navbar />
       <main className="flex-grow w-[100vw]">
         {/* Hero Section: building blocks assembling */}
-        <section className="relative h-[60vh] w-full flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
+        <section className="relative h-[80vh] w-full flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
           {/* Building blocks container: skyline then subtle rearrange */}
           <div
             className="absolute bottom-[12%] left-1/2 -translate-x-1/2 w-[min(320px,85vw)] h-[140px] pointer-events-none"

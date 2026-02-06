@@ -9,7 +9,7 @@ import CanvasLoader from './CanvasLoader';
 
 const Hero = () => {
   return (
-    <div className="relative h-[70vh] w-[100vw] mt-12">
+    <div className="relative h-[80vh] w-[100vw] mt-12">
       {/* 3D Background */}
       <div className="absolute inset-0">
         <Canvas
