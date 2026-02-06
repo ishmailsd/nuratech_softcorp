@@ -42,9 +42,39 @@ const Portfolio = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow w-[100vw]">
-        {/* Hero Section */}
-        <section className="relative h-[60vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4">
-          <div className="max-w-3xl">
+        {/* Hero Section: building blocks assembling */}
+        <section className="relative h-[60vh] w-full flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
+          {/* Building blocks container: skyline then subtle rearrange */}
+          <div
+            className="absolute bottom-[12%] left-1/2 -translate-x-1/2 w-[min(320px,85vw)] h-[140px] pointer-events-none"
+            aria-hidden
+          >
+            {[
+              { left: 0, bottom: 0, w: 70, h: 50, delay: 0, bx: '8px', by: '-6px' },
+              { left: 80, bottom: 0, w: 80, h: 65, delay: 120, bx: '-6px', by: '6px' },
+              { left: 170, bottom: 0, w: 70, h: 50, delay: 240, bx: '10px', by: '4px' },
+              { left: 100, bottom: 60, w: 60, h: 55, delay: 360, bx: '-8px', by: '-4px' },
+              { left: 170, bottom: 60, w: 70, h: 50, delay: 480, bx: '6px', by: '-8px' },
+              { left: 130, bottom: 115, w: 60, h: 45, delay: 600, bx: '-4px', by: '6px' },
+            ].map((block, i) => (
+              <div
+                key={i}
+                className="absolute rounded border-2 border-white/30 bg-white/10 backdrop-blur-sm"
+                style={{
+                  left: block.left,
+                  bottom: block.bottom,
+                  width: block.w,
+                  height: block.h,
+                  animation: 'blocks-assemble 14s ease-in-out infinite',
+                  animationDelay: `${block.delay}ms`,
+                  ['--bx']: block.bx,
+                  ['--by']: block.by,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Portfolio</h1>
             <p className="text-xl">Showcasing our innovative software solutions tailored for businesses.</p>
           </div>

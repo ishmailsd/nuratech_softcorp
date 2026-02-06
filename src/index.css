@@ -43,6 +43,70 @@
   animation-delay: 4s;
 }
 
+/* Services hero: radar pulse rings */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Services hero: floating code/UI snippets drift */
+@keyframes float-drift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(12px, -8px) rotate(1deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-6px, 10px) rotate(-0.5deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(-10px, -5px) rotate(0.5deg);
+    opacity: 0.7;
+  }
+}
+
+/* Portfolio hero: building blocks assemble then rearrange */
+@keyframes blocks-assemble {
+  0% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  18% {
+    transform: translateY(0);
+    opacity: 0.88;
+  }
+  38% {
+    transform: translateY(0);
+    opacity: 0.88;
+  }
+  55% {
+    transform: translate(var(--bx, 0), var(--by, 0));
+    opacity: 0.88;
+  }
+  72% {
+    transform: translate(var(--bx, 0), var(--by, 0));
+    opacity: 0.88;
+  }
+  88% {
+    transform: translateY(0);
+    opacity: 0.88;
+  }
+  100% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
 body {
   margin: 0;
   display: flex;
