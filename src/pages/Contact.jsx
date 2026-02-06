@@ -11,10 +11,29 @@ const Contact = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative h-[50vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
-            <p className="text-xl">We’d love to hear from you! Reach out to us for any inquiries, support, or partnerships.</p>
+        <section className="relative w-full bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
+              <p className="text-xl">We'd love to hear from you! Reach out to us for any inquiries, support, or partnerships.</p>
+            </div>
+            
+            {/* Map Section */}
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-2xl">
+                <iframe
+                  src="https://www.google.com/maps?q=26+John+St,+Freetown&hl=en&z=14&output=embed"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                  title="Location Map - 26 John St, Freetown"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -98,11 +98,11 @@ const Footer = () => {
                 
               </li>
               <li>
-  <span className="block text-gray-400">Address:</span>
-  <span className="block">
-    "We are Online" 🤷🏽‍♂️
-  </span>
-</li>
+                <span className="block text-gray-400">Address:</span>
+                <span className="block">
+                  26 John St, Freetown
+                </span>
+              </li>
             </ul>
           </div>
         </div>
