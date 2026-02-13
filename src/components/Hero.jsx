@@ -27,12 +27,6 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-      </div>
-
       {/* Content Overlay */}
       <div className="relative width-full z-10 h-full flex items-center justify-center">
         <div className="text-center">

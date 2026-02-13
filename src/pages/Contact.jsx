@@ -2,16 +2,32 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// Background A: #0f172a base + pink-400 in 3 spots (top-right, bottom-left, center)
+const BACKGROUND_A = [
+  'radial-gradient(ellipse 55% 55% at 75% 25%, rgb(244 114 182 / 0.28), transparent 58%)',
+  'radial-gradient(ellipse 55% 55% at 25% 70%, rgb(244 114 182 / 0.28), transparent 58%)',
+  'radial-gradient(ellipse 50% 50% at 50% 50%, rgb(244 114 182 / 0.22), transparent 55%)',
+  '#0f172a',
+].join(', ');
+
+// Background B (experiment): same 3-spot pattern, blue-400 + pink-400
+const BACKGROUND_B = [
+  'radial-gradient(ellipse 55% 55% at 75% 25%, rgb(244 114 182 / 0.28), transparent 58%)',
+  'radial-gradient(ellipse 55% 55% at 25% 70%, rgb(96 165 250 / 0.28), transparent 58%)',
+  'radial-gradient(ellipse 50% 50% at 50% 50%, rgb(96 165 250 / 0.22), transparent 55%)',
+  '#0f172a',
+].join(', ');
+
 const Contact = () => {
   // --- PASTE YOUR FORMPSREE ENDPOINT URL HERE ---
-  const FORM_ENDPOINT = "https://formspree.io/f/xgvylggl"; 
+  const FORM_ENDPOINT = "https://formspree.io/f/xgvylggl";
 
   return (
-    <div className="min-h-screen min-w-screen flex flex-col">
+    <div className="min-h-screen min-w-screen flex flex-col page-bg">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow min-h-full relative">
         {/* Hero Section */}
-        <section className="relative w-full bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 py-16">
+        <section className="relative w-full text-white px-4 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
@@ -20,7 +36,7 @@ const Contact = () => {
             
             {/* Map Section */}
             <div className="max-w-5xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-2xl">
+              <div className="glass-card rounded-lg overflow-hidden shadow-2xl">
                 <iframe
                   src="https://www.google.com/maps?q=26+John+St,+Freetown&hl=en&z=14&output=embed"
                   width="100%"
@@ -38,19 +54,19 @@ const Contact = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-16 bg-gray-100">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-100 mb-12">Get in Touch</h2>
             
-            {/* Formspree Form: Simple, secure, and works on any host */}
+            {/* Formspree Form: half blur (12px) */}
             <form
               action={FORM_ENDPOINT}
               method="POST"
-              className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg space-y-6"
+              className="max-w-3xl mx-auto glass-card blur-half p-8 rounded-lg space-y-6"
             >
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                   Full Name
                 </label>
                 <input
@@ -58,13 +74,13 @@ const Contact = () => {
                   id="name"
                   name="name"
                   required
-                  className="block text-gray-900 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="block text-gray-100 bg-white/10 border border-white/20 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full p-3 placeholder-gray-400"
                 />
               </div>
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                   Email Address
                 </label>
                 <input
@@ -72,13 +88,13 @@ const Contact = () => {
                   id="email"
                   name="email"
                   required
-                  className="block text-gray-900 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="block text-gray-100 bg-white/10 border border-white/20 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full p-3 placeholder-gray-400"
                 />
               </div>
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
                   Message
                 </label>
                 <textarea
@@ -86,7 +102,7 @@ const Contact = () => {
                   name="message"
                   rows="10"
                   required
-                  className="block text-gray-900 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="block text-gray-100 bg-white/10 border border-white/20 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full p-3 placeholder-gray-400"
                 ></textarea>
               </div>
 

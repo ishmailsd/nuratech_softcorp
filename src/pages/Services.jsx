@@ -71,11 +71,11 @@ const snippetData = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen min-w-screen flex flex-col">
+    <div className="min-h-screen min-w-screen flex flex-col page-bg">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section: radar rings + floating snippets */}
-        <section className="relative h-[80vh] w-full flex items-center justify-center text-center bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-white px-4 pt-16 overflow-hidden">
+        <section className="relative h-[80vh] w-full flex items-center justify-center text-center text-white px-4 pt-16 overflow-hidden">
           {/* Radar pulse rings (background layer) */}
           {[0, 800, 1600, 2400, 3200].map((delay) => (
             <RadarRing key={delay} delay={delay} />
@@ -123,15 +123,15 @@ const Services = () => {
         </section>
         
         {/* Services Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 glass-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What We Offer</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-100 mb-12">What We Offer</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                <div key={index} className={`p-6 rounded-lg text-center hover:shadow-lg transition duration-300 ${index % 2 === 0 ? 'glass-card' : 'glass-card-alt'}`}>
                   <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.title}</h3>
+                  <p className="text-gray-300">{service.description}</p>
                 </div>
               ))}
             </div>

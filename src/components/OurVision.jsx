@@ -4,12 +4,12 @@ import video from '../assets/images/hightechworld_phone.mp4';
 
 const OurVision = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20">
       <div className="container mx-auto px-2">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Vision</h2>
+            <h2 className="text-4xl font-bold text-gray-100 mb-4">Our Vision</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
@@ -28,23 +28,23 @@ const OurVision = () => {
 
             {/* Vision Text */}
             <div className="col-span-1 md:col-span-5 prose prose-lg mt-4">
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-300 mb-6">
                 Our mission is delivered through two specialized practices, united by a shared team of experts and a commitment to excellence. This unique structure allows us to offer both powerful execution and strategic, principled guidance for your digital journey.
               </p>
               
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-300 mb-6">
                 <strong>360 SoftCorp</strong> is the engine of your operational excellence. We specialize in developing robust, high-performance software and empowering your teams through cutting-edge training. Our focus is on building the technical capacity that allows your organization to innovate, scale, and accelerate with confidence.
               </p>
 
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-300 mb-6">
                 <strong>Nura Tech Solutions</strong> extends this capability into the realm of strategic transformation. As a premier technology and business consultancy, we architect sophisticated digital ecosystems and provide expert guidance for long-term growth. We selectively partner with organizations committed to creating sustainable, positive impact, ensuring our collaborations are built on a foundation of integrity and shared values.
               </p>
 
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-300 mb-6">
                 Whether you need to build a powerful application with 360 SoftCorp or design a comprehensive, value-aligned digital strategy with Nura Tech, you engage with the same core team of dedicated professionals. We are not two separate companies, but two integrated approaches to achieving success. Do you have a vision, an idea? Let us help you make it a reality.
               </p>
 
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Join us in building a future where powerful technology is guided by clear purpose. Let's create solutions that not only perform, but also endure.
               </p>
             </div>

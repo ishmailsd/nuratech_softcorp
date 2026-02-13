@@ -113,11 +113,197 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* No fill – fixed gradient layer below handles background */
+  background: transparent;
+}
+
+/* Global background — commented out; each page uses .page-bg instead */
+/*
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgb(30 58 138 / 0.4),
+    rgb(88 28 135 / 0.4),
+    rgb(131 24 67 / 0.4)
+  );
+  pointer-events: none;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+*/
+
+/* Shared page background: #0f172a base + blue-400 & pink-400 in 3 spots */
+.page-bg {
+  background:
+    radial-gradient(ellipse 55% 55% at 75% 25%, rgb(244 114 182 / 0.28), transparent 58%),
+    radial-gradient(ellipse 55% 55% at 25% 70%, rgb(96 165 250 / 0.28), transparent 58%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgb(96 165 250 / 0.22), transparent 55%),
+    #0f172a;
+  background-attachment: fixed;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Glassmorphism: sections — top/bottom padding, light gradient borders */
+.glass-section {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-image:
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* Oval glass band: 110vw width, sides overflow; blur + gradient lines */
+.glass-oval {
+  width: 110vw;
+  margin-left: -5vw;
+  min-height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background-image:
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+/* Hero bottom: single line concave upward (curved top edge, gradient line) */
+.hero-bottom-line-concave-up {
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 100% 100% 0 0;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* Top and bottom gradient borders only (no blur/glass) */
+.section-top-bottom-borders {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-image:
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.glass-section-alt {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-image:
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* Oval bar: one clean border only (drop-shadow follows clip-path); no extra lines or arcs */
+.glass-card-oval-taper {
+  clip-path: ellipse(50% 48% at 50% 50%);
+  -webkit-clip-path: ellipse(50% 48% at 50% 50%);
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 0 0 1px rgba(255, 255, 255, 0.4));
+}
+
+/* Top arc of oval: use as bottom of hero; half-ellipse (curved down) + glass + gradient line on curved edge */
+.oval-arc-top {
+  width: 110vw;
+  margin-left: -5vw;
+  height: 2rem;
+  border-radius: 0 0 50% 50%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: none;
+  background-image: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+
+/* Bottom arc of oval: use at top of next section; half-ellipse (curved up) + glass + gradient line on curved edge */
+.oval-arc-bottom {
+  width: 110vw;
+  margin-left: -5vw;
+  height: 2rem;
+  border-radius: 50% 50% 0 0;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: none;
+  background-image: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%);
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* Glassmorphism: cards — minimal bg so blur is visible in all browsers */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 1px rgba(30, 41, 59, 0.4) inset;
+}
+
+.glass-card-alt {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(30, 41, 59, 0.5);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+/* Half blur (12px) — use with glass-section or glass-card when less blur is needed */
+.blur-half {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #154774;
-    background-color: #ffffff;
   }
 }

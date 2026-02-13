@@ -3,12 +3,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-pink-900/40 text-gray-300">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-      
-      {/* Main Footer Content */}
-      <div className="relative container mx-auto px-4 py-16">
+    <footer className="relative py-16 flex flex-col items-center gap-3">
+      {/* Top section: main footer content, full border, 90vw, blur */}
+      <section className="w-[90vw] max-w-7xl bg-white/[0.06] backdrop-blur-xl text-gray-300 border border-white/25 rounded-lg">
+        <div className="relative mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
@@ -106,17 +104,17 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="justify-items-center mt-16 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} 360 SoftCorp &  Nura Tech Solutions. All rights reserved.
-            </p>
-            
-          </div>
-        </div>
       </div>
+      </section>
+
+      {/* Bottom section: copyright, full border, 90vw, minimal padding above */}
+      <section className="w-[90vw] max-w-7xl bg-white/[0.06] backdrop-blur-xl text-gray-300 border border-white/25 rounded-lg py-4 px-4">
+        <div className="flex justify-center items-center">
+          <p className="text-sm text-gray-400 text-center">
+            © {new Date().getFullYear()} 360 SoftCorp &  Nura Tech Solutions. All rights reserved.
+          </p>
+        </div>
+      </section>
     </footer>
   );
 };

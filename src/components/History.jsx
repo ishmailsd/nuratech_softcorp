@@ -3,19 +3,19 @@ import React from 'react';
 const History = () => {
   return (
     <section className="relative py-20">
-      {/* Background Image with Overlay */}
+      {/* Background Image — picture as background with light overlay for text readability */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")'
         }}
       >
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
 
-      {/* Content */}
+      {/* Content — glass and border around text */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <div className="glass-card rounded-lg p-8 md:p-10 text-center max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-8">Our Journey</h2>
           <div className="max-w-3xl mx-auto space-y-6 text-gray-200">
             <p className="text-lg">
