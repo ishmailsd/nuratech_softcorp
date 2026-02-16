@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import video from '../assets/images/hightechworld_phone.mp4';
 
 const OurVision = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const promise = el.play();
+    if (promise !== undefined) {
+      promise.catch(() => {
+        // Autoplay was prevented (e.g. policy); muted+playsInline should allow it on mobile
+      });
+    }
+  }, []);
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-2">
@@ -19,10 +32,20 @@ const OurVision = () => {
             <div className="h-[60vh] p-3 col-span-1 md:col-span-5 relative md:h-auto">
               {/* Original image source: https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2425&q=80 */}
               
-              <video className="h-[55vh] md:h-auto w-full rounded-lg" autoPlay loop muted>
-      <source src={video} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+              <video
+                ref={videoRef}
+                className="h-[55vh] md:h-auto w-full rounded-lg pointer-events-none select-none"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                disableRemotePlayback
+              >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               
             </div>
 
