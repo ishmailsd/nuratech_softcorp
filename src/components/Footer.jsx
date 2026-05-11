@@ -111,7 +111,7 @@ const Footer = () => {
       <section className="w-[90vw] max-w-7xl bg-white/[0.06] backdrop-blur-xl text-gray-300 border border-white/25 rounded-lg py-4 px-4">
         <div className="flex justify-center items-center">
           <p className="text-sm text-gray-400 text-center">
-            © {new Date().getFullYear()} 360 SoftCorp &  Nura Tech Solutions. All rights reserved.
+            © {new Date().getFullYear()} 360 SoftCorp &  Nura Tech Solutions.
           </p>
         </div>
       </section>
