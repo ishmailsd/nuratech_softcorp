@@ -46,7 +46,6 @@ export default function Navbar() {
               <a href="/services" className="hover:bg-white/10 px-3 py-2 rounded-md text-lg font-medium">Services</a>
               <a href="/portfolio" className="hover:bg-white/10 px-3 py-2 rounded-md text-lg font-medium">Portfolio</a>
               <a href="/contact" className="hover:bg-white/10 px-3 py-2 rounded-md text-lg font-medium">Contact</a>
-              <a href="/blog" className="hover:bg-white/10 px-3 py-2 rounded-md text-lg font-medium">Blog</a>
             </div>
           </div>
 
